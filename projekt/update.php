@@ -57,10 +57,10 @@ $is_admin = $_SESSION['role_id'] == 1; // Check if logged-in user is admin
 <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
 
 <form method="POST">
-    <input type="text" name="username" placeholder="Username" value="<?= htmlspecialchars($user['username']) ?>" required>
+    <input type="text" name="username" class="form-control form-control-lg"placeholder="Username" value="<?= htmlspecialchars($user['username']) ?>" required>
 
-    <input type="password" name="password" placeholder="New Password">
-    <input type="password" name="confirm_password" placeholder="Confirm New Password">
+    <input type="password" name="password" class="form-control form-control-lg"placeholder="New Password">
+    <input type="password" name="confirm_password" class="form-control form-control-lg"placeholder="Confirm New Password">
 
     <?php if ($is_admin): ?>
         <!-- Admin can update role and grade -->
@@ -81,3 +81,5 @@ $is_admin = $_SESSION['role_id'] == 1; // Check if logged-in user is admin
     <button type="submit">Update</button>
 </form>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

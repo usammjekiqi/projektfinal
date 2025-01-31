@@ -64,7 +64,7 @@ $users = $stmt->fetchAll();
 <?php endif; ?>
 
 <h2>User List</h2>
-<table>
+<table class="table table-striped table-bordered">
     <tr>
         <th>Username</th>
         <th>Role</th>
@@ -74,10 +74,10 @@ $users = $stmt->fetchAll();
     </tr>
     <?php foreach ($users as $user): ?>
         <tr>
-            <td><?= $user['username'] ?></td>
-            <td><?= $user['role_id'] == 1 ? 'Admin' : 'User' ?></td>
+            <td colspan="4"><?= $user['username'] ?></td>
+            <td colspan="4"><?= $user['role_id'] == 1 ? 'Admin' : 'User' ?></td>
             <?php if ($user_role_id == $admin_role_id): ?>
-                <td>
+                <td colspan="4">
                     <a href="delete.php?id=<?= $user['id'] ?>">Delete</a>
                 </td>
             <?php endif; ?>
@@ -86,3 +86,5 @@ $users = $stmt->fetchAll();
 
     <button><a href="index.html">Faqja</a></button>
 </table>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
